@@ -4,9 +4,45 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive side navbar</title>
-
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    
+    <nav class="navbar">
+      <span class="side-open">
+        <a href="#" onclick="openSideNav()">
+          <svg width="30" height="30">
+              <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+              <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+              <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+          </svg>
+        </a>
+      </span>
+      <ul class="navbar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="side-nav" id="sideNav">
+      <a href="#" class="btn-close" onclick="closeSideNav()">&times;</a>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+    <div id="main" class="container">
+      <h1>Responsive Web Design</h1>
+    </div>
+    <script type="text/javascript">
+        function openSideNav() {
+          document.querySelector("#sideNav").style.width = "250px";
+          document.querySelector("#main").style.marginLeft = "250px";
+        }
+        function closeSideNav() {
+          document.querySelector("#sideNav").style.width = "0px";
+          document.querySelector("#main").style.marginLeft = "0px";
+        }
+    </script>
   </body>
 </html>
